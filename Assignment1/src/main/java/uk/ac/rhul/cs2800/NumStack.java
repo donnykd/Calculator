@@ -12,9 +12,9 @@ public class NumStack {
   }
   
   public boolean isEmpty() {
-    if (size() == 0)
-      return true;
-    return false;
+    if (size() > 0)
+      return false;
+    return true;
   }
   
 }
