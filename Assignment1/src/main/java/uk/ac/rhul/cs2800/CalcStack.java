@@ -13,7 +13,7 @@ public class CalcStack {
   /**
    * An ArrayList created to store CalcEntry objects.
    */
-  ArrayList<CalcEntry> stack = new ArrayList<CalcEntry>();
+  private ArrayList<CalcEntry> stack = new ArrayList<CalcEntry>();
 
   /*
    * Returns the size of the stack.

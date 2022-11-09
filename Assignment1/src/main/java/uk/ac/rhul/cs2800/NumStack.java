@@ -19,12 +19,10 @@ public class NumStack {
     return true;
   }
   
-  public float pop() throws Exception {
+  public float pop() throws Exception{
     if(isEmpty())
       throw new EmptyStackException();
-    float answer = ns.stack.get(ns.stack.size() - 1).getFloat();
-    ns.stack.remove(ns.stack.size() - 1);
-    return answer;
+    return ns.pop().getFloat();
     }
   
 }
