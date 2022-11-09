@@ -24,5 +24,12 @@ class NumStackTest {
     ns.push((float)1);
     assertFalse(ns.isEmpty(), "Checks if the ArrayList is not empty");
   }
+  
+  @Test //Test 3, 
+  void testPop() throws Exception {
+    ns.push((float)20);
+    assertEquals(ns.pop(), (float)20, "Tests if the value popped is equal to the value pushed");
+    assertTrue(ns.isEmpty(), "Test to make sure that pop method removes the value pushed in");
+  }
 
 }

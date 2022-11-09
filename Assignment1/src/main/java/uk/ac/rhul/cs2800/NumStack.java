@@ -1,5 +1,7 @@
 package uk.ac.rhul.cs2800;
 
+import java.util.EmptyStackException;
+
 public class NumStack {
   private CalcStack ns = new CalcStack();
 
@@ -16,5 +18,13 @@ public class NumStack {
       return false;
     return true;
   }
+  
+  public float pop() throws Exception {
+    if(isEmpty())
+      throw new EmptyStackException();
+    float answer = ns.stack.get(ns.stack.size() - 1).getFloat();
+    ns.stack.remove(ns.stack.size() - 1);
+    return answer;
+    }
   
 }
