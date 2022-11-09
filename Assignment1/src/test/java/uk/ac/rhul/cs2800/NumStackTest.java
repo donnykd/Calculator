@@ -17,5 +17,12 @@ class NumStackTest {
     ns.push((float)11.2);
     assertEquals(ns.size(), 1, "Tests if the size of the array is increased if pushed");
   }
+  
+  @Test //Test 2 
+  void testIsEmpty(){
+    assertTrue(ns.isEmpty(), "Checks if the ArrayList is empty");
+    ns.push((float)1);
+    assertFalse(ns.isEmpty(), "Checks if the ArrayList is not empty");
+  }
 
 }
