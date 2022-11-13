@@ -27,7 +27,7 @@ public class NumStack {
     try {
       answer = ns.pop().getFloat();
     } catch (Exception e) {
-      System.out.println("Only numbers are allowed");
+      System.out.println("This cannot occur");
     }
     return answer;
   }

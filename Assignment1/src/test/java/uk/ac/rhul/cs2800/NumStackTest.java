@@ -31,6 +31,5 @@ class NumStackTest {
     assertEquals(nums.pop(), (float)20, "Tests if the value popped is equal to the value pushed");
     assertTrue(nums.isEmpty(), "Test to make sure that pop method removes the value pushed in");
   }
-  
 
 }
