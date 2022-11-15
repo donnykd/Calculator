@@ -24,4 +24,11 @@ class StrStackTest {
     Strs.push("hello");
     assertFalse(Strs.isEmpty(), "Checks if the ArrayList is not empty");
   }
+  
+  @Test //Test 3, tests all methods and checks if they work together well.
+  void testPop() throws Exception {
+    Strs.push("This is a String");
+    assertEquals(Strs.pop(), "This is a String", "Tests if the value popped is equal to the value pushed");
+    assertTrue(Strs.isEmpty(), "Test to make sure that pop method removes the value pushed in");
+  }
 }

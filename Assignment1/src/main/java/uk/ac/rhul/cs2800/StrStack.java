@@ -1,5 +1,7 @@
 package uk.ac.rhul.cs2800;
 
+import java.util.EmptyStackException;
+
 public class StrStack {
   private CalcStack ss = new CalcStack();
 
@@ -15,6 +17,19 @@ public class StrStack {
     if (size() > 0)
       return false;
     return true;
+  }
+  
+  public String pop() {
+    if (isEmpty())
+      throw new EmptyStackException();
+    String answer = null;
+    
+    try {
+      answer = ss.pop().getString();
+    } catch (Exception e) {
+      System.out.println("This cannot occur");
+    }
+    return answer;
   }
 
 }
