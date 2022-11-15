@@ -25,6 +25,14 @@ class OpStackTest {
     Ops.push(Symbol.DIVIDE);
     assertFalse(Ops.isEmpty(), "Checks if the ArrayList is not empty");
   }
+  
+  @Test //Test 3, tests all methods and checks if they work together well.
+  void testPop() throws Exception {
+    Ops.push(Symbol.LEFT_BRACKET);
+    assertEquals(Ops.pop(), Symbol.LEFT_BRACKET, "Tests if the value popped is equal to the value pushed");
+    assertTrue(Ops.isEmpty(), "Test to make sure that pop method removes the value pushed in");
+  }
+
 
 
 

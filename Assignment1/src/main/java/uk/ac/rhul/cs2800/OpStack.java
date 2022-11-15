@@ -1,5 +1,7 @@
 package uk.ac.rhul.cs2800;
 
+import java.util.EmptyStackException;
+
 public class OpStack {
   private CalcStack os = new CalcStack();
 
@@ -16,5 +18,19 @@ public class OpStack {
       return false;
     return true;
   }
+  
+  public Symbol pop() {
+    if (isEmpty())
+      throw new EmptyStackException();
+    Symbol answer = null;
+    
+    try {
+      answer = os.pop().getSymbol();
+    } catch (Exception e) {
+      System.out.println("This cannot occur");
+    }
+    return answer;
+  }
+
 
 }
