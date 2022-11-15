@@ -17,5 +17,11 @@ class StrStackTest {
     Strs.push("hello");
     assertEquals(Strs.size(), 1, "Tests if the size of the array is increased if pushed");
   }
-
+  
+  @Test //Test 2 
+  void testIsEmpty(){
+    assertTrue(Strs.isEmpty(), "Checks if the ArrayList is empty");
+    Strs.push("hello");
+    assertFalse(Strs.isEmpty(), "Checks if the ArrayList is not empty");
+  }
 }

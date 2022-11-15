@@ -10,5 +10,11 @@ public class StrStack {
   public int size() {
     return ss.size();
   }
+  
+  public boolean isEmpty() {
+    if (size() > 0)
+      return false;
+    return true;
+  }
 
 }
