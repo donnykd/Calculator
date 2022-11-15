@@ -10,6 +10,11 @@ public class OpStack {
   public int size() {
     return os.size();
   }
-
+  
+  public boolean isEmpty() {
+    if (size() > 0)
+      return false;
+    return true;
+  }
 
 }

@@ -18,6 +18,14 @@ class OpStackTest {
     Ops.push(Symbol.PLUS);
     assertEquals(Ops.size(), 1, "Tests if the size of the array is increased if pushed");
   }
+  
+  @Test //Test 2 
+  void testIsEmpty(){
+    assertTrue(Ops.isEmpty(), "Checks if the ArrayList is empty");
+    Ops.push(Symbol.DIVIDE);
+    assertFalse(Ops.isEmpty(), "Checks if the ArrayList is not empty");
+  }
+
 
 
 }
