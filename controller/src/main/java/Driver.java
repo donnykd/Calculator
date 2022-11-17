@@ -14,7 +14,7 @@ public class Driver extends Application{
   @Override
   public void start(Stage primaryStage) throws Exception {
     Pane pane = FXMLLoader.load(getClass().getResource("GuiView.fxml"));
-    Scene scene = new Scene(pane, 900, 900);
+    Scene scene = new Scene(pane, 500, 200);
     primaryStage.setScene(scene);
     primaryStage.show();
   }

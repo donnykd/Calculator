@@ -15,10 +15,12 @@ public class GuiView {
     private TextField field;
 
     @FXML
+    private RadioButton infix;
+
+    @FXML
     private Pane mainPane;
 
     @FXML
-    private RadioButton radioButton;
+    private RadioButton reversePolish;
 
 }
-
