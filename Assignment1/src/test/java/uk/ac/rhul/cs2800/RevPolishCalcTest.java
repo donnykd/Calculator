@@ -19,7 +19,12 @@ class RevPolishCalcTest {
   
   @Test
   void testEvaluateNumber() {
-    assertEquals(2, calc.evaluate("2"), "Tests if a number is returned if the string contains only character");
+    assertEquals(2, calc.evaluate("2"), "Tests if a number is returned if the string contains a character");
+  }
+  
+  @Test
+  void testEvaluateMoreNumbers() {
+    assertEquals(34, calc.evaluate("34"), "Tests if a number is returned if the string contains 2 numbers");
   }
 
 }
