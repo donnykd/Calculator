@@ -27,4 +27,8 @@ class RevPolishCalcTest {
     assertEquals(34, calc.evaluate("34"), "Tests if a number is returned if the string contains 2 numbers");
   }
 
+  @Test
+  void testEvaluateSpace() {
+    assertEquals(29, calc.evaluate("29  "), "Tests if space is skipped when evaluating answer");
+  }
 }
