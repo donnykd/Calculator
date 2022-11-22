@@ -44,11 +44,18 @@ class RevPolishCalcTest {
   
   @Test
   void testEvaluateMultiplySign() {
-    assertEquals(60, calc.evaluate("6 10 *"), "Tests if it will recognise the negative operand and do simple calculation");
+    assertEquals(60, calc.evaluate("6 10 *"), "Tests if it will recognise the Multiply operand and do simple calculation");
   }
   
   @Test
   void testEvaluateDivideSign() {
-    assertEquals(2, calc.evaluate("4 2 /"), "Tests if it will recognise the negative operand and do simple calculation");
+    assertEquals(2, calc.evaluate("4 2 /"), "Tests if it will recognise the Divide operand and do simple calculation");
+  }
+  
+  @Test
+  void testEvaluateMultipleOperands() {
+    assertEquals(3, calc.evaluate("4 2 + 3 -"), "Tests if it will recognise the multiple operands and do simple calculation");
+    assertEquals(10, calc.evaluate("30 5 / 4 +"), "Tests if it will recognise the multiple operands and do simple calculation");
+    assertEquals(255, calc.evaluate("100 2 + 2 / 5 *"), "Tests if it will recognise the multiple operands and do simple calculation");
   }
 }
