@@ -34,6 +34,11 @@ class RevPolishCalcTest {
   
   @Test
   void testEvaluateSimpleAddition() {
-    assertEquals(55, calc.evaluate("22 33"), "Tests if it differentiates between two different numbers, which will be automatically added together");
+    assertEquals(5, calc.evaluate("2 3 +"), "Tests if it differentiates between two different numbers, and then add the 2 floats together");
+  }
+  
+  @Test
+  void testEvaluateNegativeSign() {
+    assertEquals(4, calc.evaluate("5 1 -"), "Tests if it will recognise the negative operand and do simple calculation");
   }
 }
