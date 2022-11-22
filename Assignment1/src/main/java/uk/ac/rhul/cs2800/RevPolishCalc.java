@@ -8,6 +8,8 @@ public class RevPolishCalc {
   public float evaluate(String expression) {
     Scanner sc = new Scanner(expression);
     String next;
+    float value1;
+    float value2;
 
     while (sc.hasNext()) {
       next = sc.next();
@@ -21,7 +23,19 @@ public class RevPolishCalc {
       }
 
       else if (next.equals("-")) {
-        value.push(-value.pop()  + value.pop());
+        value1 = value.pop();
+        value2 = value.pop();
+        value.push(value2  - value1);
+      }
+      
+      else if (next.equals("*")) {
+        value.push(value.pop()  * value.pop());
+      }
+      
+      else if (next.equals("/")) {
+        value1 = value.pop();
+        value2 = value.pop();
+        value.push(value2  / value1);
       }
 
     }
