@@ -13,49 +13,61 @@ class RevPolishCalcTest {
   }
 
   @Test
-  void testEvaluate0() {
+  void testEvaluate0() throws Exception {
     assertEquals(0, calc.evaluate(""), "Tests if an empty string returns a 0");
   }
   
   @Test
-  void testEvaluateNumber() {
+  void testEvaluateNumber() throws Exception {
     assertEquals(2, calc.evaluate("2"), "Tests if a number is returned if the string contains a character");
   }
   
   @Test
-  void testEvaluateMoreNumbers() {
+  void testEvaluateMoreNumbers() throws Exception {
     assertEquals(3455, calc.evaluate("3455"), "Tests if a number is returned if the string contains 2 numbers");
   }
 
   @Test
-  void testEvaluateSpace() {
+  void testEvaluateSpace() throws Exception {
     assertEquals(29, calc.evaluate("29  "), "Tests if space is skipped when evaluating answer");
   }
   
   @Test
-  void testEvaluateSimpleAddition() {
+  void testEvaluateSimpleAddition() throws Exception {
     assertEquals(5, calc.evaluate("2 3 +"), "Tests if it differentiates between two different numbers, and then add the 2 floats together");
   }
   
   @Test
-  void testEvaluateNegativeSign() {
+  void testEvaluateNegativeSign() throws Exception {
     assertEquals(4, calc.evaluate("5 1 -"), "Tests if it will recognise the negative operand and do simple calculation");
   }
   
   @Test
-  void testEvaluateMultiplySign() {
+  void testEvaluateMultiplySign() throws Exception {
     assertEquals(60, calc.evaluate("6 10 *"), "Tests if it will recognise the Multiply operand and do simple calculation");
   }
   
   @Test
-  void testEvaluateDivideSign() {
+  void testEvaluateDivideSign() throws Exception {
     assertEquals(2, calc.evaluate("4 2 /"), "Tests if it will recognise the Divide operand and do simple calculation");
   }
   
   @Test
-  void testEvaluateMultipleOperands() {
+  void testEvaluateMultipleOperands() throws Exception {
     assertEquals(3, calc.evaluate("4 2 + 3 -"), "Tests if it will recognise the multiple operands and do simple calculation");
     assertEquals(10, calc.evaluate("30 5 / 4 +"), "Tests if it will recognise the multiple operands and do simple calculation");
     assertEquals(255, calc.evaluate("100 2 + 2 / 5 *"), "Tests if it will recognise the multiple operands and do simple calculation");
   }
+  
+  @Test
+  void testEvaluateError() throws Exception {
+    assertThrows(Exception.class, () -> calc.evaluate("4 -"), "Error");
+  }
+  
+  @Test
+  void testEvaluateComplexError() throws Exception {
+    assertThrows(Exception.class, () -> calc.evaluate("4 * 4 - /"), "Error");
+  }
+  
+  
 }

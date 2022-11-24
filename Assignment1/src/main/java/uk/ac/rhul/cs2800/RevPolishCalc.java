@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class RevPolishCalc {
   private NumStack value = new NumStack();
 
-  public float evaluate(String expression) {
+  public float evaluate(String expression) throws Exception {
     Scanner sc = new Scanner(expression);
     String next;
     float value1;
@@ -19,26 +19,39 @@ public class RevPolishCalc {
       }
 
       else if (next.equals("+")) {
-        value.push(value.pop() + value.pop());
+        if (value.size() > 1)
+          value.push(value.pop() + value.pop());
+        else
+          throw new Exception("Error");
       }
 
       else if (next.equals("-")) {
-        value1 = value.pop();
-        value2 = value.pop();
-        value.push(value2  - value1);
+        if (value.size() > 1) {
+          value1 = value.pop();
+          value2 = value.pop();
+          value.push(value2 - value1);
+        } else
+          throw new Exception("Error");
       }
-      
+
       else if (next.equals("*")) {
-        value.push(value.pop()  * value.pop());
+        if (value.size() > 1)
+          value.push(value.pop() * value.pop());
+        else
+          throw new Exception("Error");
       }
-      
+
       else if (next.equals("/")) {
-        value1 = value.pop();
-        value2 = value.pop();
-        value.push(value2  / value1);
+        if (value.size() > 1) {
+          value1 = value.pop();
+          value2 = value.pop();
+          value.push(value2 / value1);
+        } else
+          throw new Exception("Error");
       }
 
     }
+    sc.close();
     if (value.size() == 1)
       return value.pop();
     return 0;
