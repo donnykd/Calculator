@@ -69,5 +69,10 @@ class RevPolishCalcTest {
     assertThrows(Exception.class, () -> calc.evaluate("4 * 4 - /"), "Error");
   }
   
+  @Test
+  void testEvaluateExpressionError() throws Exception {
+    assertThrows(Exception.class, () -> calc.evaluate("4 5 + 2 3 +"), "Error");
+  }
+  
   
 }

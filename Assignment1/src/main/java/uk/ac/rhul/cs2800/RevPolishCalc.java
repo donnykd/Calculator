@@ -52,6 +52,8 @@ public class RevPolishCalc {
 
     }
     sc.close();
+    if (value.size() > 1)
+      throw new Exception("Error");
     if (value.size() == 1)
       return value.pop();
     return 0;
