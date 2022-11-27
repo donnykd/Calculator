@@ -54,24 +54,27 @@ class RevPolishCalcTest {
   
   @Test
   void testEvaluateMultipleOperands() throws Exception {
-    assertEquals(3, calc.evaluate("4 2 + 3 -"), "Tests if it will recognise the multiple operands and do simple calculation");
-    assertEquals(10, calc.evaluate("30 5 / 4 +"), "Tests if it will recognise the multiple operands and do simple calculation");
-    assertEquals(255, calc.evaluate("100 2 + 2 / 5 *"), "Tests if it will recognise the multiple operands and do simple calculation");
+    assertEquals(3, calc.evaluate("4 2 + 3 -"), "Tests if longer expressions work");
+    assertEquals(10, calc.evaluate("30 5 / 4 +"), "Tests if longer expressions work");
+    assertEquals(255, calc.evaluate("100 2 + 2 / 5 *"), "Tests if longer expressions work");
   }
   
   @Test
   void testEvaluateError() throws Exception {
-    assertThrows(Exception.class, () -> calc.evaluate("4 -"), "Error");
+    Exception exception = assertThrows(Exception.class, () -> calc.evaluate("4 -"));
+    assertEquals(exception.getMessage(), "Invalid Format");
   }
   
   @Test
   void testEvaluateComplexError() throws Exception {
-    assertThrows(Exception.class, () -> calc.evaluate("4 * 4 - /"), "Error");
+    Exception exception = assertThrows(Exception.class, () -> calc.evaluate("4 * 4 - /"));
+    assertEquals(exception.getMessage(), "Invalid Format");
   }
   
   @Test
   void testEvaluateExpressionError() throws Exception {
-    assertThrows(Exception.class, () -> calc.evaluate("4 5 + 2 3 +"), "Error");
+    Exception exception = assertThrows(Exception.class, () -> calc.evaluate("4 5 + 2 3 +"));
+    assertEquals(exception.getMessage(), "Invalid Expression");
   }
   
   
