@@ -16,5 +16,10 @@ class StandardCalcTest {
   void testEvaluate0() {
     assertEquals(0, calc.evaluate(""), "Tests if an empty string returns a 0");
   }
+  
+  @Test
+  void testEvaluateNumber() {
+    assertEquals(100, calc.evaluate("100"), "Tests if a number is returned once expression is entered");
+  }
 
 }
