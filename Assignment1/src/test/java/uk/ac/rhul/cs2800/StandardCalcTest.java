@@ -47,5 +47,13 @@ class StandardCalcTest {
     assertEquals(120, calc.evaluate("120 * 1"), "Tests if the result of a simple multiply will be returned");
     assertEquals(1, calc.evaluate("0.001 * 1000"), "Tests if the result of a simple multiply will be returned");
   }
+  
+  @Test
+  void testEvaluateDivide() {
+    assertEquals(20, calc.evaluate("100 / 5"), "Tests if the result of a simple multiply will be returned");
+    assertEquals(1, calc.evaluate("0.5 / 0.5"), "Tests if the result of a simple multiply will be returned");
+    assertEquals(5, calc.evaluate("25 / 5"), "Tests if the result of a simple multiply will be returned");
+    assertEquals(11, calc.evaluate("22 / 2"), "Tests if the result of a simple multiply will be returned");
+  }
 
 }

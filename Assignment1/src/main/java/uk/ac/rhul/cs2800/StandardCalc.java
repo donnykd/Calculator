@@ -19,6 +19,8 @@ public class StandardCalc {
           operands.push(Symbol.MINUS);
         else if (next.equals(Symbol.TIMES.toString()))
           operands.push(Symbol.TIMES);
+        else if (next.equals(Symbol.DIVIDE.toString()))
+          operands.push(Symbol.DIVIDE);
       }
     }
     if (value.size() > 1 && operands.size() > 0) {
@@ -30,6 +32,8 @@ public class StandardCalc {
           value.push(-value.pop() + value.pop());
         else if (operand.toString().equals("*"))
           value.push(value.pop() * value.pop());
+        else if (operand.toString().equals("/"))
+          value.push(1 / value.pop() * value.pop());
       }
       return value.pop();
     } else if (value.size() == 1)
