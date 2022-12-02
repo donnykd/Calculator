@@ -19,7 +19,9 @@ class StandardCalcTest {
   
   @Test
   void testEvaluateNumber() {
-    assertEquals(100, calc.evaluate("100"), "Tests if a number is returned once expression is entered");
+    assertEquals(100, calc.evaluate("100"), "Tests if 100 is returned once expression is entered");
+    assertEquals(26, calc.evaluate("26"), "Tests if 26 is returned once expression is entered");
+    assertEquals(922, calc.evaluate("922"), "Tests if 922 is returned once expression is entered");
   }
 
 }
