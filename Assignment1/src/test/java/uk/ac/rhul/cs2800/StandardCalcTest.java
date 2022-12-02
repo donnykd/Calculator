@@ -23,5 +23,10 @@ class StandardCalcTest {
     assertEquals(26, calc.evaluate("26"), "Tests if 26 is returned once expression is entered");
     assertEquals(922, calc.evaluate("922"), "Tests if 922 is returned once expression is entered");
   }
+  
+  @Test
+  void testEvaluateSimpleAddition() {
+    assertEquals(10, calc.evaluate("5 + 5"), "Tests if the result of a simple addition will be returned");
+  }
 
 }
