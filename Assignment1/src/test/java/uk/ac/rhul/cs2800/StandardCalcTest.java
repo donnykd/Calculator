@@ -25,8 +25,19 @@ class StandardCalcTest {
   }
   
   @Test
-  void testEvaluateSimpleAddition() {
+  void testEvaluateAddition() {
     assertEquals(10, calc.evaluate("5 + 5"), "Tests if the result of a simple addition will be returned");
+    assertEquals(20, calc.evaluate("19 + 1"), "Tests if the result of a simple addition will be returned");
+    assertEquals(22, calc.evaluate("20 + 2"), "Tests if the result of a simple addition will be returned");
+    assertEquals(2, calc.evaluate("1 + 1"), "Tests if the result of a simple addition will be returned");
+  }
+  
+  @Test
+  void testEvaluateSubtraction() {
+    assertEquals(3, calc.evaluate("5 - 2"), "Tests if the result of a simple addition will be returned");
+    assertEquals(18, calc.evaluate("19 - 1"), "Tests if the result of a simple addition will be returned");
+    assertEquals(18, calc.evaluate("20 - 2"), "Tests if the result of a simple addition will be returned");
+    assertEquals(0, calc.evaluate("1 - 1"), "Tests if the result of a simple addition will be returned");
   }
 
 }

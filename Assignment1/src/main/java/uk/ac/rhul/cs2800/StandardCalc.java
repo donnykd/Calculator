@@ -13,9 +13,10 @@ public class StandardCalc {
         next = sc.next();
         if (Character.isDigit(next.charAt(0)))
           value.push(Float.parseFloat(next));
-        else if (next.equals(Symbol.PLUS.toString())) {
+        else if (next.equals(Symbol.PLUS.toString()))
           operands.push(Symbol.PLUS);
-        }
+        else if (next.equals(Symbol.MINUS.toString()))
+          operands.push(Symbol.MINUS);
       }
     }
     if (value.size() > 1 && operands.size() > 0) {
@@ -23,6 +24,8 @@ public class StandardCalc {
         Symbol operand = operands.pop();
         if (operand.toString().equals("+"))
           value.push(value.pop() + value.pop());
+        else if (operand.toString().equals("-"))
+          value.push(-value.pop() + value.pop());
       }
       return value.pop();
     } else if (value.size() == 1)
