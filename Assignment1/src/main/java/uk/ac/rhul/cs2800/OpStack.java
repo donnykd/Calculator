@@ -32,5 +32,16 @@ public class OpStack {
     return answer;
   }
 
+  public Symbol top() {
+    Symbol answer = null;
+    
+    try {
+      answer = os.top().getSymbol();
+    } catch (Exception e) {
+      System.out.println("This cannot occur");
+    }
+    return answer;
+  }
+
 
 }

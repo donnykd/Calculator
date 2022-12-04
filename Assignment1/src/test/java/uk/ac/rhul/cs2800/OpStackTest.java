@@ -32,6 +32,13 @@ class OpStackTest {
     assertEquals(Ops.pop(), Symbol.LEFT_BRACKET, "Tests if the value popped is equal to the value pushed");
     assertTrue(Ops.isEmpty(), "Test to make sure that pop method removes the value pushed in");
   }
+  
+  @Test //Test 4, Made during standardCalc class
+  void testTop(){
+    Ops.push(Symbol.LEFT_BRACKET);
+    assertEquals(Ops.top(), Symbol.LEFT_BRACKET, "Tests if the value popped is equal to the value pushed");
+    assertFalse(Ops.isEmpty(), "Test to make sure that pop method does not remove the value pushed in");
+  }
 
 
 

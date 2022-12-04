@@ -1,44 +1,60 @@
 package uk.ac.rhul.cs2800;
 
+import java.util.ArrayDeque;
 import java.util.Scanner;
 
 public class StandardCalc {
-  private NumStack value = new NumStack();
-  private OpStack operands = new OpStack();
+  private OpStack value = new OpStack();
+  RevPolishCalc rpcalc = new RevPolishCalc();
+  ArrayDeque<String> queue = new ArrayDeque<String>();
 
-  public float evaluate(String expression) {
+  public float evaluate(String expression) throws Exception {
     try (Scanner sc = new Scanner(expression)) {
       String next;
+
       while (sc.hasNext()) {
         next = sc.next();
+
         if (Character.isDigit(next.charAt(0)))
-          value.push(Float.parseFloat(next));
-        else if (next.equals(Symbol.PLUS.toString()))
-          operands.push(Symbol.PLUS);
-        else if (next.equals(Symbol.MINUS.toString()))
-          operands.push(Symbol.MINUS);
+          queue.push(next + " ");
+
+        else if (next.equals(Symbol.PLUS.toString())) {
+          if (!(value.isEmpty())) {
+            if (value.top().equals(Symbol.TIMES) || value.top().equals(Symbol.DIVIDE)) {
+              String temp = value.pop().toString();
+              queue.push(temp + " ");
+            }
+          }
+          value.push(Symbol.PLUS);
+        }
+
+        else if (next.equals(Symbol.MINUS.toString())) {
+          if (!(value.isEmpty())) {
+            if (value.top().equals(Symbol.TIMES) || value.top().equals(Symbol.DIVIDE)) {
+              String temp = value.pop().toString();
+              queue.push(temp + " ");
+            }
+          }
+          value.push(Symbol.MINUS);
+        }
+
         else if (next.equals(Symbol.TIMES.toString()))
-          operands.push(Symbol.TIMES);
+          value.push(Symbol.TIMES);
+
         else if (next.equals(Symbol.DIVIDE.toString()))
-          operands.push(Symbol.DIVIDE);
+          value.push(Symbol.DIVIDE);
+      }
+      while (!(value.isEmpty())) {
+        String temp = value.pop().toString();
+        queue.push(temp + " ");
       }
     }
-    if (value.size() > 1 && operands.size() > 0) {
-      while (operands.size() != 0) {
-        Symbol operand = operands.pop();
-        if (operand.toString().equals("+"))
-          value.push(value.pop() + value.pop());
-        else if (operand.toString().equals("-"))
-          value.push(-value.pop() + value.pop());
-        else if (operand.toString().equals("*"))
-          value.push(value.pop() * value.pop());
-        else if (operand.toString().equals("/"))
-          value.push(1 / value.pop() * value.pop());
-      }
-      return value.pop();
-    } else if (value.size() == 1)
-      return value.pop();
-    else
-      return 0;
+    StringBuilder sb = new StringBuilder();
+    while (!(queue.isEmpty())) {
+      sb.append(queue.removeLast());
+    }
+
+    return rpcalc.evaluate(sb.toString());
   }
 }
+
