@@ -16,6 +16,7 @@ public class Driver extends Application{
     Pane pane = FXMLLoader.load(getClass().getResource("GuiView.fxml"));
     Scene scene = new Scene(pane, 500, 200);
     primaryStage.setScene(scene);
+    primaryStage.setResizable(false);
     primaryStage.show();
   }
 
