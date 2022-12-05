@@ -37,12 +37,22 @@ public class StandardCalc {
           }
           value.push(Symbol.MINUS);
         }
+        
+        else if (next.equals(Symbol.DIVIDE.toString()))
+          value.push(Symbol.DIVIDE);
 
         else if (next.equals(Symbol.TIMES.toString()))
           value.push(Symbol.TIMES);
-
-        else if (next.equals(Symbol.DIVIDE.toString()))
-          value.push(Symbol.DIVIDE);
+        
+        else if (next.equals(Symbol.LEFT_BRACKET.toString()))
+          value.push(Symbol.LEFT_BRACKET);
+        
+        else if (next.equals(Symbol.RIGHT_BRACKET.toString())) {
+          while(!(value.top().equals(Symbol.LEFT_BRACKET))) {
+            String temp = value.pop().toString();
+            queue.push(temp + " ");
+          }
+        }
       }
       while (!(value.isEmpty())) {
         String temp = value.pop().toString();
