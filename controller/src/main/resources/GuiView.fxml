@@ -8,8 +8,7 @@
 <Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GuiView">
    <children>
       <TextField fx:id="field" layoutX="176.0" layoutY="75.0" />
-      <RadioButton fx:id="reversePolish" layoutX="142.0" layoutY="141.0" mnemonicParsing="false" text="ReversePolish" />
+      <RadioButton fx:id="reversePolish" layoutX="176.0" layoutY="138.0" mnemonicParsing="false" text="ReversePolish" />
       <Button fx:id="calculateButton" layoutX="176.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" stylesheets="@GuiView.css" text="Calculate" />
-      <RadioButton fx:id="infix" layoutX="282.0" layoutY="141.0" mnemonicParsing="false" text="infix" />
    </children>
 </Pane>
