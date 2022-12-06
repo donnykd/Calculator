@@ -9,7 +9,10 @@ public class CalcModel {
       sc = new StandardCalc();
       return sc.evaluate(expression);
     }
-    return 0;
+    else {
+      rp = new RevPolishCalc();
+      return rp.evaluate(expression);
+    }
   }
 
 }
