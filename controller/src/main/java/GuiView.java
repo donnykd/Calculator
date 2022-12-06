@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
@@ -14,8 +15,10 @@ import javafx.scene.layout.Pane;
 
 public class GuiView implements ViewInterface {
   private String expression = "";
-  private String answer;
-
+  
+  @FXML
+  private Label answer;
+  
   @FXML
   private Button calculateButton;
 
@@ -58,7 +61,7 @@ public class GuiView implements ViewInterface {
 
   @Override
   public void setAnswer(String str) {
-    this.answer = str;
+    answer.setText(str);
   }
 
   @Override
