@@ -1,0 +1,11 @@
+.button {
+  -fx-background-color: lightblue;
+}
+
+.pane {
+  -fx-background-color: black;
+}
+
+.bg-black-style {
+    -fx-background-color:  black;
+}
