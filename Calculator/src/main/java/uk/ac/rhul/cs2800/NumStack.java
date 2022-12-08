@@ -1,5 +1,7 @@
 package uk.ac.rhul.cs2800;
 
+import java.util.EmptyStackException;
+
 /**
  * @author Khalid Mahamed
  * 
@@ -41,6 +43,9 @@ public class NumStack {
    * @return float on the top of the stack while also removing it.
    */
   public float pop() {
+    if (isEmpty())
+      throw new EmptyStackException();
+
     float answer = 0;
 
     try {
