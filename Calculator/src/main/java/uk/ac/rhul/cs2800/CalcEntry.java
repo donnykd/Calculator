@@ -12,7 +12,6 @@ import java.util.Objects;
 public class CalcEntry {
   private float f;
   private Symbol symbol;
-  private String s;
   /**
    * Set inside the constructor to determine the value of the object created.
    * 
@@ -40,15 +39,6 @@ public class CalcEntry {
     type = Type.SYMBOL;
   }
 
-  /**
-   * Public constructor that takes in a symbol and sets the type to a number.
-   * 
-   * @param string value used to create the CalcEntry object.
-   */
-  public CalcEntry(String string) {
-    this.s = string;
-    type = Type.STRING;
-  }
 
   /*
    * Checks if a float constructed object calls the method and returns the float if it does.
@@ -81,20 +71,6 @@ public class CalcEntry {
     throw new Exception("Bad Type");
   }
 
-  /*
-   * Checks if a String constructed object calls the method and returns the String if it does.
-   * Otherwise it returns a BadType Exception.
-   * 
-   * @return String if the type matches.
-   * 
-   * @throws Exception when object constructed with wrong type tries to call this method.
-   */
-  public String getString() throws Exception {
-    if (this.type.toString().equals("String")) {
-      return this.s;
-    }
-    throw new Exception("Bad Type");
-  }
 
   /*
    * Returns a unique hash for every contained type.
@@ -102,12 +78,12 @@ public class CalcEntry {
    */
   @Override
   public int hashCode() {
-    return Objects.hash(f, s, symbol);
+    return Objects.hash(f, symbol);
   }
 
   /*
-   * Returns true if an object has the same type and value as the parameters. 
-   * Otherwise returns false.
+   * Returns true if an object has the same type and value as the parameters. Otherwise returns
+   * false.
    *
    */
   @Override
@@ -119,7 +95,7 @@ public class CalcEntry {
     if (getClass() != obj.getClass())
       return false;
     CalcEntry other = (CalcEntry) obj;
-    return Float.floatToIntBits(f) == Float.floatToIntBits(other.f) && Objects.equals(s, other.s)
-        && symbol == other.symbol && type == other.type;
+    return Float.floatToIntBits(f) == Float.floatToIntBits(other.f) && symbol == other.symbol
+        && type == other.type;
   }
 }

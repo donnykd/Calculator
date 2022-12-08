@@ -2,7 +2,6 @@ package uk.ac.rhul.cs2800;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
@@ -38,54 +37,35 @@ class TestEntry {
         "Tests if the returned value is the same one created");
   }
 
-  @Test // 3rd test, Tests the constructor and the getter method for string. Was edited since it
-        // only tested the constructor at first.
-  void testString() throws Exception {
-    ce = new CalcEntry("A string");
-    assertEquals(ce.getString(), "A string", "Tests if the same string is returned");
-  }
-
-  @Test // 4th test, Had to create Type enum before continuing with this.
+  @Test // 3th test, Had to create Type enum before continuing with this.
   void testException() {
-    ce = new CalcEntry("a");
+    ce = new CalcEntry(Symbol.DIVIDE);
     assertThrows(Exception.class, () -> ce.getFloat(), "Tests if an exception is thrown");
   }
 
-  @Test // 5th test, Tests minor differences between the CalcEntry strings such as lowercase and
-        // uppercase letters.
+  @Test // 4th test, Tests minor differences between the CalcEntry entry
   void testEquals() {
-    ce = new CalcEntry("String");
-    CalcEntry ce2 = new CalcEntry("string");
+    ce = new CalcEntry((float) 29.332);
+    CalcEntry ce2 = new CalcEntry((float) 29.33);
     assertFalse(ce.equals(ce2), "Tests if the 2 objects are not equal");
   }
 
-  @Test // 6th test, Tests 2 entirely different types.
-  void testEquals2() {
-    ce = new CalcEntry((float) 12);
-    CalcEntry ce2 = new CalcEntry("Low");
-    assertFalse(ce.equals(ce2), "Tests if the 2 objects are not equal");
-  }
 
-  @Test // 7th test, Tests if the same float will be equal.
+
+  @Test // 5th test, Tests if the same float will be equal.
   void testEquals3() {
     ce = new CalcEntry((float) 12);
     CalcEntry ce2 = new CalcEntry((float) 12);
     assertTrue(ce.equals(ce2), "Tests if the 2 objects are equal");
   }
 
-  @Test // 8th test
+  @Test // 6th test
   void testHash() {
     ce = new CalcEntry((float) 1);
     CalcEntry ce2 = new CalcEntry((float) 1);
     assertEquals(ce.hashCode(), ce2.hashCode(), "Tests if the 2 object have the same hashcode");
   }
 
-  @Test // 9th test, Tests if minor differences such as lowercase and uppercase letters would
-        // generate different hashcodes.
-  void testHash2() {
-    ce = new CalcEntry("Hello");
-    CalcEntry ce2 = new CalcEntry("hello");
-    assertNotEquals(ce.hashCode(), ce2.hashCode(), "Tests if the 2 object have different hashcode");
-  }
+
 
 }

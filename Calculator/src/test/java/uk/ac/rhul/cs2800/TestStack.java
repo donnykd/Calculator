@@ -81,8 +81,8 @@ class TestStack {
   @Test // 8th test, I would call this the ultimate test. Combines all the methods in the CalcStack
         // class with different scenarios throughout.
   void testTop() {
-    CalcEntry s = new CalcEntry("first");
-    CalcEntry s2 = new CalcEntry("2nd");
+    CalcEntry s = new CalcEntry(Symbol.DIVIDE);
+    CalcEntry s2 = new CalcEntry(Symbol.LEFT_BRACKET);
     CalcEntry f = new CalcEntry((float) 3);
     cs.push(s);
     cs.push(s2);

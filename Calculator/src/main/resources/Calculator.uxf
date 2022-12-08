@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>189</x>
+      <y>243</y>
+      <w>180</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+uk.ac.rhul.cs2800.Symbol
+
+Contains all tokens
+except numbers needed
+in an expression
+--
+_LEFT_BRACKET_
+_RIGHT_BRACKET_
+_TIMES_
+_DIVIDE_
+_PLUS_
+_MINUS_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>459</x>
+      <y>243</y>
+      <w>171</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+uk.ac.rhul.cs2800.Type
+
+Types of value
+an entry can represent
+--
+_NUMBER_
+_SYMBOL_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

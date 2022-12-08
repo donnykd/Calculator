@@ -8,8 +8,7 @@ package uk.ac.rhul.cs2800;
  *
  */
 public enum Symbol {
-  PLUS("+"), MINUS("-"), TIMES("*"), DIVIDE("/"), LEFT_BRACKET("("), RIGHT_BRACKET(")"), INVALID(
-      "Invalid");
+  PLUS("+"), MINUS("-"), TIMES("*"), DIVIDE("/"), LEFT_BRACKET("("), RIGHT_BRACKET(")");
 
   private String print; // used to initialise and store the string of each enum.
 

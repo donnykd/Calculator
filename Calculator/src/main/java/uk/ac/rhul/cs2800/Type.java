@@ -7,7 +7,7 @@ package uk.ac.rhul.cs2800;
  *         a string of the name of each entity.
  */
 public enum Type {
-  NUMBER("Number"), SYMBOL("Symbol"), STRING("String"), INVALID("Invalid");
+  NUMBER("Number"), SYMBOL("Symbol"), STRING("String");
 
   private String print; // used to initialise and store the string of each enum.
 
